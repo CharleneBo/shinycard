@@ -1,0 +1,55 @@
+.card {
+  width: 500px;
+  padding: 1rem;
+  margin: 1rem;
+  background: #1a1a1a;
+  color: white;
+  overflow: hidden;
+  text-align: center;
+  position: relative;
+  border-radius: 0;
+}
+
+/* Fancy corner */
+.card::before,
+.card::after {
+  content: "";
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  background: gold;
+  z-index: 2;
+  mask-image: radial-gradient(circle 60px at 100% 100%, transparent 50%, black 51%);
+  -webkit-mask-image: radial-gradient(circle 390px at 100% 100%, transparent 50%, black 51%);
+}
+
+/* Top-left */
+.card::before {
+  top: 0;
+  left: 0;
+  transform: rotate(0deg);
+}
+
+/* Bottom-right */
+.card::after {
+  bottom: 0;
+  right: 0;
+  transform: rotate(180deg)
+}
+
+.card-image img {
+  width: 100%; /* use full card width */
+  transition: transform 0.2s ease;
+}
+
+
+.card-texts {
+  margin-top: 1rem;
+  font-size: 30px;
+  list-style: none;
+  padding: 0;
+}
+
+.card-texts li {
+  margin-bottom: 0.4rem;
+}

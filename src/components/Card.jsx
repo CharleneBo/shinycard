@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import './Card.css'; // Create this next
 
-export default function Card({ image, texts, borderStyle }) {
+export default function Card({ image, texts, borderStyle, backgroundImage }) {
   const [offset, setOffset] = useState({ x: 0 });
 
   const handleMouseMove = (e) => {
@@ -13,10 +13,16 @@ export default function Card({ image, texts, borderStyle }) {
 
   return (
     <div
-      className={`card ${borderStyle}`}
-      onMouseMove={handleMouseMove}
-      onMouseLeave={() => setOffset({ x: 0 })}
-    >
+  className={`card ${borderStyle}`}
+  onMouseMove={handleMouseMove}
+  onMouseLeave={() => setOffset({ x: 0 })}
+  style={{
+    backgroundImage: `url(${backgroundImage})`,
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    backgroundRepeat: 'no-repeat',
+  }}
+>
       <div
         className="card-image"
         style={{ transform: `translateX(${offset.x}px)` }}

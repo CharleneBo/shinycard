@@ -2,7 +2,6 @@
   width: 500px;
   padding: 1rem;
   margin: 1rem;
-  background: #1a1a1a;
   color: white;
   overflow: hidden;
   text-align: center;
@@ -17,10 +16,10 @@
   position: absolute;
   width: 200px;
   height: 200px;
-  background: gold;
+  background-image: url("/src/assets/gold.png");
   z-index: 2;
   mask-image: radial-gradient(circle 60px at 100% 100%, transparent 50%, black 51%);
-  -webkit-mask-image: radial-gradient(circle 390px at 100% 100%, transparent 50%, black 51%);
+  -webkit-mask-image: radial-gradient(circle 395px at 100% 100%, transparent 50%, black 51%);
 }
 
 /* Top-left */
@@ -40,6 +39,7 @@
 .card-image img {
   width: 100%; /* use full card width */
   transition: transform 0.2s ease;
+  filter: drop-shadow(0 0 8px gold);
 }
 
 

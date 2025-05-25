@@ -1,19 +1,24 @@
 import React from 'react';
-import cheep from './assets/cheep.png';
 import Card from './components/Card';
 import './App.css';
-import shinyGif from './assets/shiny.gif';
-
+import { cardData } from './data/cardData';
+import Header from './components/Header';
 
 function App() {
   return (
     <div className="app">
-      <Card
-        image={cheep}
-        texts={["wiwiwiwiwiwiwiwiwiwiwiwi", "wiwiwiwiwiwiwiwiwiwiwiwi", "wiwiwiwiwiwiwiwiwiwiwiwi"]}
-        borderStyle=""
-        backgroundImage={shinyGif}
-      />
+      <Header />
+      <div className="card-container">
+        {cardData.map((card, index) => (
+          <Card
+            key={index}
+            image={card.image}
+            texts={card.texts}
+            borderStyle={card.borderStyle}
+            backgroundImage={card.backgroundImage}
+          />
+        ))}
+      </div>
     </div>
   );
 }
